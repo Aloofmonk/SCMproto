@@ -1,14 +1,17 @@
 <template>
+  <MyHeader/>
   <MyHome/>
 </template>
 
 <script>
+import MyHeader from './components/MyHeader.vue'
 import MyHome from './components/MyHome.vue'
 
 export default {
   name: 'App',
   components: {
-    MyHome
+    MyHome,
+    MyHeader
   }
 }
 </script>

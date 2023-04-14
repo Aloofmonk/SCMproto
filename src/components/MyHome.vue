@@ -3,7 +3,7 @@
   <div class="home image-carousel">
     <div class="first-half">
 
-      <MyHeader/>
+      
       <transition>
         <div class="background-img image-container">
           <img class="img" :src="currentImage" alt="carousel-image" :key="currentImage">
@@ -141,12 +141,10 @@
 </template>
 
 <script>
-import MyHeader from './MyHeader.vue';
 
 export default {
   name: 'MyHome',
   components:{
-    MyHeader,
   },
   data() {
     return {
@@ -190,6 +188,7 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Poppins&family=Roboto:wght@300&display=swap');
 
 .home{
+  padding-top: 68px;
   font-family: 'Lato', sans-serif;
 }
 p{

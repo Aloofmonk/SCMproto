@@ -1,8 +1,8 @@
 <template>
-	<div  class="nav-wrapper-flex">
+	<div :class="{ 'navbar': true, 'navbar--hidden': isNavbarHidden }"  class="nav-wrapper-flex">
 		<div  class="left-nav-flex">
 			<div class="nav logo">
-				<img src="../images/scm.png" alt="">
+				<img src="https://media.licdn.com/dms/image/C4D0BAQE5AtzIBYNpmQ/company-logo_200_200/0/1550234297969?e=2147483647&v=beta&t=oovQkwIqOrgjvHSZvso3mOlRGBHFEcAJPubI_L_oHfM" alt="">
 			</div>
 
 			<div @mouseover="showDiv1 = 'about'; showDiv3 = ''; showDiv4 = ''; showDiv5 = ''; showDiv2 = ''"  class="nav nav-link navigate about">About Us<font-awesome-icon class="caret" icon="caret-down" />
@@ -164,6 +164,8 @@
 		name: 'MyHeader',
 		data() {
 			return {
+				prevScrollPos: 0,
+				isNavbarHidden: false,
 				showDiv1: '',
 				showDiv2: '',
 				showDiv3: '',
@@ -171,6 +173,18 @@
 				showDiv5: '',
 				hideTimeout: null
 			};
+		},
+		computed: {
+			shouldHideNavbar() {
+				this.hideDiv()
+				return this.prevScrollPos < window.pageYOffset;
+			},
+		},
+		mounted() {
+			window.addEventListener('scroll', this.handleScroll);
+		},
+		beforeUnmount() {
+			window.removeEventListener('scroll', this.handleScroll);
 		},
 		methods: {
 		hideDiv() {
@@ -184,14 +198,32 @@
 		},
 		cancelHide() {
 			clearTimeout(this.hideTimeout);
-		}
-	}
+		},
+		handleScroll() {
+			this.isNavbarHidden = this.shouldHideNavbar;
+			this.prevScrollPos = window.pageYOffset;
+		},
+	},
 }
 
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+.navbar {
+	position: fixed;
+	width: 100%;
+	z-index: 100;
+	backdrop-filter: blur(100px);
+	transition: transform 0.5s;
+	background: rgba(255, 255, 255, 0.85);  
+	box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.25);
+	box-sizing: border-box;
+}
+.navbar--hidden {
+  transform: translateY(-100px);
+}
 .nav-wrapper-flex{
 	display: flex;
 	justify-content: space-between;
@@ -213,6 +245,9 @@
 	margin-right: 20px;
 	cursor: pointer;
 }
+.logo{
+	margin-right: 30px;
+}
 .navigate{
 	transition: all 0.2s ease-out;
 }
@@ -224,7 +259,7 @@
 	transform: rotate(-180deg);
 }
 img{
-	width: 200px;
+	width: 40px;
 	cursor: pointer;
 }
 .last-nav{
@@ -274,7 +309,7 @@ img{
 .my-style1{
 	position: fixed;
 	top: 47px;
-	left: 260px;
+	left: 110px;
 	display: flex;
 	flex-direction:column;
 	align-items: center;
@@ -288,7 +323,7 @@ img{
 .my-style2{
 	position: fixed;
 	top: 47px;
-	left: 360px;
+	left: 210px;
 	display: flex;
 	flex-direction:column;
 	align-items: center;
@@ -302,7 +337,7 @@ img{
 .my-style3{
 	position: fixed;
 	top: 47px;
-	left: 450px;
+	left: 300px;
 	display: flex;
 	flex-direction:column;
 	align-items: center;
@@ -316,7 +351,7 @@ img{
 .my-style4{
 	position: fixed;
 	top: 47px;
-	left: 550px;
+	left: 400px;
 	display: flex;
 	flex-direction:column;
 	align-items: center;
@@ -330,7 +365,7 @@ img{
 .my-style5{
 	position: fixed;
 	top: 47px;
-	left: 600px;
+	left: 615px;
 	display: flex;
 	flex-direction:column;
 	align-items: center;
@@ -340,6 +375,11 @@ img{
 	height: 280px;
 	box-shadow: 0 0 5px rgb(159, 159, 159);
 	border-radius: 3px;
+}
+.pop-up-nav{
+	z-index: 100000;
+	font-family: 'Poppins', sans-serif;
+	line-height: 1;
 }
 .pop{
 	display: flex;
