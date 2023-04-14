@@ -5,18 +5,18 @@
 				<img src="https://media.licdn.com/dms/image/C4D0BAQE5AtzIBYNpmQ/company-logo_200_200/0/1550234297969?e=2147483647&v=beta&t=oovQkwIqOrgjvHSZvso3mOlRGBHFEcAJPubI_L_oHfM" alt="">
 			</div>
 
-			<div @mouseover="hideDiv1" @mouseenter="triggerOtherDiv()" class="nav nav-link navigate about">About Us<font-awesome-icon class="caret" icon="caret-down" />
+			<div @mouseover="hideDiv1" @mouseenter="triggerOtherDiv()" class="nav nav-link navigate about">About Us<font-awesome-icon :class="[showDiv1 === true ? 'caret-twist' : '' ]" class="caret" icon="caret-down" />
 			</div>
 
-			<div @mouseover="hideDiv2" @mouseenter="triggerOtherDiv2()" class="nav nav-link navigate">Services<font-awesome-icon class="caret" icon="caret-down" />
+			<div @mouseover="hideDiv2" @mouseenter="triggerOtherDiv2()" class="nav nav-link navigate">Services<font-awesome-icon :class="[showDiv2 === true ? 'caret-twist' : '']" class="caret" icon="caret-down" />
 			</div>
 
-			<div @mouseover="hideDiv3" @mouseenter="triggerOtherDiv3()" class="nav nav-link navigate">Research<font-awesome-icon class="caret" icon="caret-down" /></div>
+			<div @mouseover="hideDiv3" @mouseenter="triggerOtherDiv3()" class="nav nav-link navigate">Research<font-awesome-icon :class="[showDiv3 === true ? 'caret-twist' : '']" class="caret" icon="caret-down" /></div>
 
-			<div @mouseover="hideDiv4" @mouseenter="triggerOtherDiv4()" class="nav-link last-nav navigate">Contact<font-awesome-icon class="caret" icon="caret-down" /></div>
+			<div @mouseover="hideDiv4" @mouseenter="triggerOtherDiv4()" class="nav-link last-nav navigate">Contact<font-awesome-icon :class="[showDiv4 === true ? 'caret-twist' : '']" class="caret" icon="caret-down" /></div>
 		</div>
 		<div class="right-nav-flex">
-			<div @mouseover="hideDiv5" @mouseenter="triggerOtherDiv5()" class="nav nav-link navigate">Blog<font-awesome-icon class="caret" icon="caret-down" /></div>
+			<div @mouseover="hideDiv5" @mouseenter="triggerOtherDiv5()" class="nav nav-link navigate">Blog<font-awesome-icon :class="[showDiv5 === true ? 'caret-twist' : '']" class="caret" icon="caret-down" /></div>
 			<div @mouseover="hideDiv()" class="nav nav-link navigate">Login</div>
 			<div @mouseover="hideDiv()" class="nav nav-link button navigate">Create free account</div>
 			<div @mouseover="hideDiv()" class="nav-search last-nav navigate"><font-awesome-icon class="search" icon="magnifying-glass" /></div>
@@ -284,6 +284,10 @@
 	color: rgb(233, 42, 42);
 }
 .navigate:hover .caret{
+	color: rgb(233, 42, 42);
+	transform: rotate(-180deg);
+}
+.caret-twist{
 	color: rgb(233, 42, 42);
 	transform: rotate(-180deg);
 }
