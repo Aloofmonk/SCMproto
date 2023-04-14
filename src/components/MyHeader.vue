@@ -5,24 +5,25 @@
 				<img src="https://media.licdn.com/dms/image/C4D0BAQE5AtzIBYNpmQ/company-logo_200_200/0/1550234297969?e=2147483647&v=beta&t=oovQkwIqOrgjvHSZvso3mOlRGBHFEcAJPubI_L_oHfM" alt="">
 			</div>
 
-			<div @mouseover="showDiv1 = 'about'; showDiv3 = ''; showDiv4 = ''; showDiv5 = ''; showDiv2 = ''"  class="nav nav-link navigate about">About Us<font-awesome-icon class="caret" icon="caret-down" />
+			<div @mouseover="hideDiv1" @mouseenter="triggerOtherDiv()" class="nav nav-link navigate about">About Us<font-awesome-icon class="caret" icon="caret-down" />
 			</div>
 
-			<div @mouseover="showDiv2 = 'services'; showDiv1 = ''; showDiv3 = ''; showDiv4 = ''; showDiv5 = ''"  class="nav nav-link navigate">Services<font-awesome-icon class="caret" icon="caret-down" />
+			<div @mouseover="hideDiv2" @mouseenter="triggerOtherDiv2()" class="nav nav-link navigate">Services<font-awesome-icon class="caret" icon="caret-down" />
 			</div>
 
-			<div @mouseover="showDiv3 = 'research'; showDiv2 = ''; showDiv1 = ''; showDiv4 = ''; showDiv5 = ''"  class="nav nav-link navigate">Research<font-awesome-icon class="caret" icon="caret-down" /></div>
-			<div @mouseover="showDiv4 = 'contact'; showDiv2 = ''; showDiv1 = ''; showDiv3 = ''; showDiv5 = ''" class="nav-link last-nav navigate">Contact<font-awesome-icon class="caret" icon="caret-down" /></div>
+			<div @mouseover="hideDiv3" @mouseenter="triggerOtherDiv3()" class="nav nav-link navigate">Research<font-awesome-icon class="caret" icon="caret-down" /></div>
+
+			<div @mouseover="hideDiv4" @mouseenter="triggerOtherDiv4()" class="nav-link last-nav navigate">Contact<font-awesome-icon class="caret" icon="caret-down" /></div>
 		</div>
 		<div class="right-nav-flex">
-			<div @mouseover="showDiv5 = 'blog'; showDiv2 = ''; showDiv1 = ''; showDiv3 = ''; showDiv4 = ''" class="nav nav-link navigate">Blog<font-awesome-icon class="caret" icon="caret-down" /></div>
-			<div @mouseover="showDiv1 = ''; showDiv2 = ''; showDiv3 = ''; showDiv4 = ''; showDiv5 = ''" class="nav nav-link navigate">Login</div>
-			<div @mouseover="showDiv1 = ''; showDiv2 = ''; showDiv3 = ''; showDiv4 = ''; showDiv5 = ''" class="nav nav-link button navigate">Create free account</div>
-			<div @mouseover="showDiv1 = ''; showDiv2 = ''; showDiv3 = ''; showDiv4 = ''; showDiv5 = ''" class="nav-search last-nav navigate"><font-awesome-icon class="search" icon="magnifying-glass" /></div>
+			<div @mouseover="hideDiv5" @mouseenter="triggerOtherDiv5()" class="nav nav-link navigate">Blog<font-awesome-icon class="caret" icon="caret-down" /></div>
+			<div @mouseover="hideDiv()" class="nav nav-link navigate">Login</div>
+			<div @mouseover="hideDiv()" class="nav nav-link button navigate">Create free account</div>
+			<div @mouseover="hideDiv()" class="nav-search last-nav navigate"><font-awesome-icon class="search" icon="magnifying-glass" /></div>
 		</div>
 		
 	</div>
-	<div @mouseover="showDiv1 = 'about'" @mouseleave="hideDiv()" class="pop-up-nav my-style1" v-if="showDiv1">
+	<div @mouseover="hideDiv1" @mouseleave="triggerHideDiv()" class="pop-up-nav my-style1" v-show="showDiv1">
 	
 		<div class="pop">
 
@@ -54,7 +55,7 @@
 		</div>
 	</div>
 
-	<div @mouseover="showDiv2 = 'services'" @mouseleave="hideDiv()" class="pop-up-nav my-style2" v-if="showDiv2">
+	<div @mouseover="hideDiv2" @mouseleave="triggerHideDiv()" class="pop-up-nav my-style2" v-if="showDiv2">
 		
 		<div class="pop">
 
@@ -73,7 +74,7 @@
 		
 	</div>
 
-	<div @mouseover="showDiv3 = 'research'" @mouseleave="hideDiv()" class="pop-up-nav my-style3" v-if="showDiv3">
+	<div @mouseover="hideDiv3" @mouseleave="triggerHideDiv()" class="pop-up-nav my-style3" v-if="showDiv3">
 
 		<div class="pop">
 
@@ -105,7 +106,7 @@
 		</div>
 		
 	</div>
-	<div @mouseover="showDiv4 = 'contact'" @mouseleave="hideDiv()" class="pop-up-nav my-style4" v-if="showDiv4">
+	<div @mouseover="hideDiv4" @mouseleave="triggerHideDiv()" class="pop-up-nav my-style4" v-if="showDiv4">
 
 		<div class="pop">
 
@@ -124,7 +125,7 @@
 		
 	</div>
 
-	<div @mouseover="showDiv5 = 'blog'" @mouseleave="hideDiv()" class="pop-up-nav my-style5" v-if="showDiv5">
+	<div @mouseover="hideDiv5" @mouseleave="triggerHideDiv()" class="pop-up-nav my-style5" v-if="showDiv5">
 
 		<div class="pop">
 
@@ -162,21 +163,28 @@
 <script>
 	export default{
 		name: 'MyHeader',
-		data() {
-			return {
+		props: {
+			hide1: Function,
+			hide2: Function,
+			hide3: Function,
+			hide4: Function,
+			hide5: Function,
+			hideDiv: Function,
+			showDiv1: String,
+			showDiv2: String,
+			showDiv3: String,
+			showDiv4: String,
+			showDiv5: String,
+		},
+		data(){
+			return{
 				prevScrollPos: 0,
 				isNavbarHidden: false,
-				showDiv1: '',
-				showDiv2: '',
-				showDiv3: '',
-				showDiv4: '',
-				showDiv5: '',
-				hideTimeout: null
-			};
+			}
 		},
 		computed: {
 			shouldHideNavbar() {
-				this.hideDiv()
+				this.triggerHideDiv()
 				return this.prevScrollPos < window.pageYOffset;
 			},
 		},
@@ -187,22 +195,43 @@
 			window.removeEventListener('scroll', this.handleScroll);
 		},
 		methods: {
-		hideDiv() {
-			this.hideTimeout = setTimeout(() => {
-				this.showDiv1 = '';
-				this.showDiv2 = '';
-				this.showDiv3 = '';
-				this.showDiv4 = '';
-				this.showDiv5 = '';
-			}, -500); // Set the duration to 500 milliseconds
-		},
-		cancelHide() {
-			clearTimeout(this.hideTimeout);
-		},
-		handleScroll() {
-			this.isNavbarHidden = this.shouldHideNavbar;
-			this.prevScrollPos = window.pageYOffset;
-		},
+			handleScroll() {
+				this.isNavbarHidden = this.shouldHideNavbar;
+				this.prevScrollPos = window.pageYOffset;
+			},
+			triggerHideDiv() {
+				this.$props.hideDiv();
+			},
+			triggerOtherDiv() {
+				this.$props.hide1();
+			},
+			triggerOtherDiv2() {
+				this.$props.hide2();
+			},
+			triggerOtherDiv3() {
+				this.$props.hide3();
+			},
+			triggerOtherDiv4() {
+				this.$props.hide4();
+			},
+			triggerOtherDiv5() {
+				this.$props.hide5();
+			},
+			hideDiv1() {
+				this.$emit('hide-div1');
+			},
+			hideDiv2() {
+				this.$emit('hide-div2');
+			},
+			hideDiv3() {
+				this.$emit('hide-div3');
+			},
+			hideDiv4() {
+				this.$emit('hide-div4');
+			},
+			hideDiv5() {
+				this.$emit('hide-div5');
+			},
 	},
 }
 

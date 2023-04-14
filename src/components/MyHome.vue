@@ -1,6 +1,6 @@
 <template>
 
-  <div class="home image-carousel">
+  <div @mouseover="triggerHideDiv()" class="home image-carousel">
     <div class="first-half">
 
       
@@ -89,7 +89,7 @@
           </div>
           <div class="text text-one">
             <h2>SCM Retreat 2022</h2>
-            <p>A non-traditional business retreat led to a breakthrough solution. The serene environment fostered collaboration and innovative thinking. The impact of the solution reached beyond the attendees to transform lives and create a better future..</p>
+            <p class="retreat">A non-traditional business retreat led to a breakthrough solution. The serene environment fostered collaboration and innovative thinking...</p>
              <div class="link">
 
                 <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
@@ -114,7 +114,7 @@
             <img class="forth-img" src="../images/smcchief.jpeg" alt="">
           </div>
           <div class="text text-one">
-            <h2>Interview with Mrs Nwamara Nnaji – SCM Capital Chief Risk Officer...</h2>
+            <h2>SCM Capital Chief Risk Officer...</h2>
             <p class="interview">Our Investment Banking team handles business advisory and capital issues in the form of equity or debt for various types of clients in various sectors of the economy.</p>
              <div class="link">
 
@@ -128,7 +128,7 @@
           </div>
           <div class="text text-one">
             <h2>The Importance Of Market Analysis</h2>
-            <p class="analysis">When it comes to investing, market analysis is not just important, it is essential. Without thorough analysis, you risk making uninformed decisions that could lead to costly mistakes. By taking the time to truly understand the market, you set yourself up for success and increase your chances of achieving your investment goals..</p>
+            <p class="analysis">When it comes to investing, market analysis is not just important, it is essential. Without thorough analysis, you risk making uninformed decisions...</p>
             <div class="link">
 
                 <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
@@ -146,9 +146,17 @@ export default {
   name: 'MyHome',
   components:{
   },
+  props:{
+    hideDiv: Function,
+  },
+  
   data() {
     return {
       images: [
+        'https://assetmanagement.scmcapitalng.com/wp-content/uploads/2020/12/Banner-7-min.jpg',
+        'https://assetmanagement.scmcapitalng.com/wp-content/uploads/2020/12/Banner-8-min.jpg',
+        'https://www.scmcapitalng.com/wp-content/uploads/2020/12/Banner-4-min.jpg',
+        'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-5-2022.jpg',
         'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-2-2022.jpg',
         'https://www.scmcapitalng.com/wp-content/uploads/2021/06/Banner-5-Walk-you.jpg',
         'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-3-2022.jpg',
@@ -179,7 +187,10 @@ export default {
     setCurrentImage(index) {
       this.currentImageIndex = index;
       this.stopCarousel();
-    }
+    },
+    triggerHideDiv() {
+      this.$props.hideDiv();
+    },
   }
 }
 </script>
@@ -197,24 +208,27 @@ p{
 .invest{
   padding-bottom: 25px;
 }
+.retreat{
+  padding-bottom: 30px;
+}
 .analysis{
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 .time{
   padding-bottom: 30px;
 }
 .research{
-  padding-bottom: 25px;
+  padding-bottom: 30px;
 }
 .interview{
-  padding-bottom: 56px;
+  padding-bottom: 30px;
 }
 .background-img{
-  box-shadow: 0px 0px 3px rgb(108, 108, 108);
+  box-shadow: 0px 0px 4px rgb(108, 108, 108);
 }
 .img{
   width: 100%;
-  height: 520px;
+  height: 480px;
 }
 .img.active{
   opacity: 1;
@@ -222,21 +236,29 @@ p{
 
 .button-container {
   position: relative;
+  left: 40%;
   bottom: 50px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  padding-bottom: 9px;
   margin-top: 10px;
+  backdrop-filter: blur(50px);
+  display: inline-block;
+  border-radius: 5px;
 }
 
 .button-container button {
   margin: 0 5px;
-  background-color: grey;
+  background-color: rgba(0, 0, 0, 0.37);
   padding: 5px 7px;
   cursor: pointer;
   border-radius: 10px;
   outline: none;
   border: none;
+  transition: all .2s ease-in-out;
+}
+.button-container button:hover {
+  background-color: rgba(255, 0, 0, 0.3);
 }
 
 .button-container button:focus {
@@ -244,7 +266,7 @@ p{
 }
 
 .button-container button.active {
-  background-color: rgb(237, 29, 29);
+  background-color: rgba(237, 29, 29, 0.8);
 }
 .intro{
   font-family: 'Lato', sans-serif;
@@ -358,6 +380,7 @@ p{
 }
 .forth-img{
   width: 500px;
+  height: 320px
 }
 .forth-wrapper{
   padding-left: 150px;
