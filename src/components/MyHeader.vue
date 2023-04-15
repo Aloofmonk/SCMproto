@@ -346,7 +346,8 @@ img{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.96);
+	background: rgba(255, 255, 255, 0.86);
+	backdrop-filter: blur(10px);
 	transition: all 0.3s ease-out;
 	width: 400px;
 	height: 280px;
@@ -360,7 +361,8 @@ img{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.96);
+	background: rgba(255, 255, 255, 0.86);
+	backdrop-filter: blur(10px);
 	transition: all 0.3s ease-out;
 	width: 400px;
 	height: 280px;
@@ -374,7 +376,8 @@ img{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.96);
+	background: rgba(255, 255, 255, 0.86);
+	backdrop-filter: blur(10px);
 	transition: all 0.3s ease-out;
 	width: 400px;
 	height: 280px;
@@ -388,7 +391,8 @@ img{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.96);
+	background: rgba(255, 255, 255, 0.86);
+	backdrop-filter: blur(10px);
 	transition: all 0.3s ease-out;
 	width: 400px;
 	height: 280px;
@@ -402,7 +406,8 @@ img{
 	display: flex;
 	flex-direction:column;
 	align-items: center;
-	background: rgba(255, 255, 255, 0.96);
+	background: rgba(255, 255, 255, 0.86);
+	backdrop-filter: blur(10px);
 	transition: all 0.3s ease-out;
 	width: 400px;
 	height: 280px;

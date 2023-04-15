@@ -4,13 +4,14 @@
     <div class="first-half">
 
       
-      <transition>
-        <div class="background-img image-container">
-          <img class="img" :src="currentImage" alt="carousel-image" :key="currentImage">
+      <transition-group name="fade" tag="div">
+        <div class="background-img image-container" v-for="i in [currentIndex]" :key="i">
+          <img class="img" :src="currentImg">
         </div>
-      </transition>
+      </transition-group>
+
       <div class="button-container">
-        <button v-for="(images, index) in images" :key="index" :class="{ active: index === currentImageIndex }" @click="setCurrentImage(index)">
+        <button v-for="(images, index) in images" :key="index" :class="{ active: index === currentIndex }" @click="setCurrentImage(index)">
         </button>
       </div>
     </div>
@@ -29,7 +30,8 @@
             <p class="invest">Our Investment Banking team handles business advisory and capital issues in the form of equity.</p>
              <div class="link">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
               </div>
           </div>
         </div>
@@ -42,7 +44,8 @@
               <p>SCM Capital Asset Management Limited is the Asset Management subsidiary of SCM Capital Limited.</p>
                <div class="link">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
               </div>
           </div>
         </div>
@@ -55,7 +58,8 @@
               <p class="research">The Research team provides independent advice based on disciplined, tested and forward looking research methods.</p>
               <div class="link">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
               </div>
           </div>
         </div>
@@ -68,7 +72,7 @@
           <div class="about-us">
             <h2 class="section-h2">About Us</h2>
             <p class="about-p">The Company`s root as a premier investment bank in Nigeria date back over 50 years as NAL Merchant Bank Limited before it was packaged as a re-branding of the capital market competencies of the constituent banks that made up the Sterling Bank Group.</p>
-            <div class="link">
+            <div class="about-link link">
 
               <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
             </div>
@@ -90,9 +94,10 @@
           <div class="text text-one">
             <h2>SCM Retreat 2022</h2>
             <p class="retreat">A non-traditional business retreat led to a breakthrough solution. The serene environment fostered collaboration and innovative thinking...</p>
-             <div class="link">
+             <div class="forth-link ">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
             </div>
           </div>
         </div>
@@ -103,9 +108,10 @@
           <div class="text text-one">
             <h2>It's That Time Of The Year Again</h2>
             <p class="time">Our Investment Banking team handles business advisory and capital issues in the form of equity or debt for various types of clients in various sectors of the economy.</p>
-             <div class="link">
+             <div class="forth-link ">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
             </div>
           </div>
         </div>
@@ -116,9 +122,10 @@
           <div class="text text-one">
             <h2>SCM Capital Chief Risk Officer...</h2>
             <p class="interview">Our Investment Banking team handles business advisory and capital issues in the form of equity or debt for various types of clients in various sectors of the economy.</p>
-             <div class="link">
+             <div class="forth-link ">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
             </div>
           </div>
         </div>
@@ -129,9 +136,10 @@
           <div class="text text-one">
             <h2>The Importance Of Market Analysis</h2>
             <p class="analysis">When it comes to investing, market analysis is not just important, it is essential. Without thorough analysis, you risk making uninformed decisions...</p>
-            <div class="link">
+            <div class="forth-link">
 
-                <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
+                <div class="read-more">Learn more</div>
+                <font-awesome-icon class="chevron" icon="chevron-right" />
             </div>
           </div>
         </div>
@@ -162,36 +170,37 @@ export default {
         'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-3-2022.jpg',
         'https://www.scmcapitalng.com/wp-content/uploads/2020/12/Banner-6-min.jpg'
       ],
-      currentImageIndex: 0,
-      intervalId: null
-    }
-  },
-  computed: {
-    currentImage() {
-      return this.images[this.currentImageIndex];
+      timer: null,
+      currentIndex: 0
     }
   },
   mounted() {
-    this.startCarousel();
+    this.startSlide();
   },
   methods: {
-    startCarousel() {
+    startSlide() {
       this.intervalId = setInterval(() => {
-        this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-      }, 3000);
+        this.currentIndex = (this.currentIndex + 1) % this.images.length;
+      }, 4000);
     },
+    
     stopCarousel() {
       clearInterval(this.intervalId);
       this.intervalId = null;
     },
     setCurrentImage(index) {
-      this.currentImageIndex = index;
+      this.currentIndex = index;
       this.stopCarousel();
     },
     triggerHideDiv() {
       this.$props.hideDiv();
     },
-  }
+  },
+  computed: {
+    currentImg() {
+      return this.images[Math.abs(this.currentIndex) % this.images.length];
+    }
+  },
 }
 </script>
 
@@ -199,14 +208,42 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Poppins&family=Roboto:wght@300&display=swap');
 
 .home{
-  padding-top: 68px;
   font-family: 'Lato', sans-serif;
 }
+
+/* .slide-enter-active,.slide-enter
+ {
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  transform: translateX(100%);
+} */
+
+/* .slide-leave-to, .slide-leave-active {
+  overflow: hidden;
+  transition: all 1s ease-in;
+  visibility: hidden;
+  position: absolute;
+  transform: translateX(-100%);
+} */
+
+.fade-leave-to,
+.fade-leave-active {
+  transition: all 2.5s ease-in;
+  visibility: hidden;
+  position: absolute;
+  width:100%;
+  opacity: 0;
+}
+
+.fade-enter,.fade-enter-active{
+  visibility: visible;
+  width:100%;
+  opacity: 1;
+}
+
 p{
   line-height: 1.5;
-}
-.invest{
-  /* padding-bottom: 25px; */
 }
 .retreat{
   padding-bottom: 30px;
@@ -220,21 +257,33 @@ p{
 .interview{
   padding-bottom: 30px;
 }
+.first-half{
+  padding-top: 68px;
+  width: 100%;
+  height: 663px;
+  overflow-x: hidden;
+}
 .background-img{
   box-shadow: 0px 0px 4px rgb(108, 108, 108);
+  width: 100%;
+  height: 480px;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  
 }
 .img{
   width: 100%;
   height: 480px;
-}
-.img.active{
-  opacity: 1;
+  transition: transform 0.5s;
+  overflow: hidden;
+  
 }
 
 .button-container {
-  position: relative;
+  position: absolute;
   left: 40%;
-  bottom: 50px;
+  bottom: 150px;
   display: flex;
   background: rgba(255, 255, 255, 0.05);
   padding-bottom: 9px;
@@ -242,6 +291,7 @@ p{
   backdrop-filter: blur(50px);
   display: inline-block;
   border-radius: 5px;
+  z-index: 1000000;
 }
 
 .button-container button {
@@ -271,7 +321,8 @@ p{
   text-align: center;
   margin-left: 10%;
   font-size: 22px;
-  padding: 155px 0;
+  padding-top: 50px;
+  padding-bottom: 170px
 }
 .card-wrapper{
   display: flex;
@@ -297,7 +348,6 @@ p{
   flex-direction: column;
   row-gap: 15px;
   padding: 25px 50px;
-  /* text-align: center; */
 }
 .card-img{
   width: 100px;
@@ -307,6 +357,14 @@ p{
 .link{
   display: flex;
   width: 100px;
+  margin-left: 100px;
+  padding-top: 10px;
+}
+.forth-link{
+  display: flex;
+  width: 100px;
+  margin-left: 148px;
+  padding-top: 10px;
 }
 .read-more{
   font-family: 'Roboto', sans-serif;
@@ -317,7 +375,11 @@ p{
   font-size: 15px;
   width: 80px;
 }
-.link:hover .chevron{
+.read-more:hover ~ .chevron{
+  background: rgb(233, 42, 42);
+  color: white;
+}
+.about-link:hover .chevron{
   background: rgb(233, 42, 42);
   color: white;
 }
@@ -330,6 +392,11 @@ p{
   margin-left: 2px;
   color: rgb(233, 42, 42);
   transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.chevron:hover{
+  background: rgb(233, 42, 42);
+  color: white;
 }
 .third-half{
   padding: 155px 0;
