@@ -22,11 +22,11 @@
       <div class="card-wrapper">
         <div class="card">
           <div class="image">
-            <img class="card-img" src="https://img.capital.com/imgs/articles/662x308x0/shutterstock_1303625407.jpg" alt="">
+            <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/2529/2529036.png" alt="">
           </div>
           <div class="text text-one">
-            <h2>Investment Banking</h2>
-            <p class="invest">Our Investment Banking team handles business advisory and capital issues in the form of equity or debt for various types of clients in various sectors of the economy.</p>
+            <h2 class="text-h2">Investment Banking</h2>
+            <p class="invest">Our Investment Banking team handles business advisory and capital issues in the form of equity.</p>
              <div class="link">
 
                 <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
@@ -35,11 +35,11 @@
         </div>
         <div class="card">
           <div class="image">
-            <img class="card-img" src="https://www.ahcopa.org/uploads/1/3/3/7/133790784/published/34.jpg?1600115998" alt="">
+            <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/3427/3427651.png" alt="">
           </div>
           <div class="text">
-              <h2>Asset Management</h2>
-              <p>SCM Capital Asset Management Limited is the full-service Asset Management subsidiary of SCM Capital Limited and is licensed by the Securities & Exchange Commission as a Fund / Portfolio Manager.</p>
+              <h2 class="text-h2">Asset Management</h2>
+              <p>SCM Capital Asset Management Limited is the Asset Management subsidiary of SCM Capital Limited.</p>
                <div class="link">
 
                 <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
@@ -48,11 +48,11 @@
         </div>
         <div class="card">
           <div class="image">
-            <img class="card-img" src="https://imageio.forbes.com/specials-images/imageserve/6182d1ac7ecd8640d0b82194/Magnifying-glass-and-business-growth-graph---financial/960x0.jpg?format=jpg&width=960" alt="">
+            <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/2362/2362314.png" alt="">
           </div>
           <div class="text">
-              <h2>Research</h2>
-              <p class="research">The Research team provides independent advice based on disciplined, tested and forward looking research methods. Our experts have in-depth knowledge of global and local financial markets.</p>
+              <h2 class="text-h2">Research</h2>
+              <p class="research">The Research team provides independent advice based on disciplined, tested and forward looking research methods.</p>
               <div class="link">
 
                 <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
@@ -206,7 +206,7 @@ p{
   line-height: 1.5;
 }
 .invest{
-  padding-bottom: 25px;
+  /* padding-bottom: 25px; */
 }
 .retreat{
   padding-bottom: 30px;
@@ -215,9 +215,6 @@ p{
   padding-bottom: 30px;
 }
 .time{
-  padding-bottom: 30px;
-}
-.research{
   padding-bottom: 30px;
 }
 .interview{
@@ -289,15 +286,23 @@ p{
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
   background: white;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.text-h2{
+  text-align: center;
 }
 .text{
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  padding: 25px 30px;
+  padding: 25px 50px;
+  /* text-align: center; */
 }
 .card-img{
-  width: 400px;
+  width: 100px;
+  margin-left: 140px;
+  margin-top: 25px;
 }
 .link{
   display: flex;
