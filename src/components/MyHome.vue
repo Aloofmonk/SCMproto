@@ -18,59 +18,75 @@
 
     <div class="second-half">
 
-      <p class="intro">Given our antecedent and capital market experience, about 50% of the companies quoted on the Nigerian Stock Exchange have our imprint. We have decades of experience in the provision of sound financial solution and advisory services. We boast of significant expertise in Investment Banking, Asset Management, Advisory Services and Research.</p>
+      <div class="second-half-card">
+        <h2 class="section-h2">Trusted by 200,000+ businesses</h2>
+        <p class="header-p">Thousands of organizations of all sizes trust SCM to grow their business.</p>
 
-      <div class="card-wrapper">
-        <div class="card">
-          <div class="image">
-            <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/2529/2529036.png" alt="">
-          </div>
-          <div class="text text-one">
-            <h2 class="text-h2">Investment Banking</h2>
-            <p class="invest">Our Investment Banking team handles business advisory and capital issues in the form of equity.</p>
-             <div class="link">
+        <div class="card-wrapper">
+          <div class="card">
+            <div class="image">
+              <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/2529/2529036.png" alt="">
+            </div>
+            <div class="text text-one">
+              <div class="h2-cont">
 
-                <div class="read-more">Learn more</div>
-                <font-awesome-icon class="chevron" icon="chevron-right" />
+                <h2 class="text-h2">SCM for </h2> 
+                <h2 class="text-h2"> Investment Banking</h2>
               </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/3427/3427651.png" alt="">
-          </div>
-          <div class="text">
-              <h2 class="text-h2">Asset Management</h2>
-              <p>SCM Capital Asset Management Limited is the Asset Management subsidiary of SCM Capital Limited.</p>
+              <p class="invest">Our Investment Banking team handles business advisory and capital issues in the form of equity.</p>
                <div class="link">
-
-                <div class="read-more">Learn more</div>
-                <font-awesome-icon class="chevron" icon="chevron-right" />
-              </div>
+  
+                  <div class="read-more">Learn more</div>
+                  <font-awesome-icon class="chevron" icon="chevron-right" />
+                </div>
+            </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/2362/2362314.png" alt="">
-          </div>
-          <div class="text">
-              <h2 class="text-h2">Research</h2>
-              <p class="research">The Research team provides independent advice based on disciplined, tested and forward looking research methods.</p>
-              <div class="link">
+          <div class="card">
+            <div class="image">
+              <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/3427/3427651.png" alt="">
+            </div>
+            <div class="text">
+                <div class="h2-cont">
 
-                <div class="read-more">Learn more</div>
-                <font-awesome-icon class="chevron" icon="chevron-right" />
-              </div>
+                  <h2 class="text-h2">SCM for </h2> 
+                  <h2 class="text-h2">Asset Management</h2>
+                </div>
+                <p>SCM Capital Asset Management Limited is the Asset Management subsidiary of SCM Capital Limited.</p>
+                 <div class="link">
+  
+                  <div class="read-more">Learn more</div>
+                  <font-awesome-icon class="chevron" icon="chevron-right" />
+                </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <img class="card-img" src="https://cdn-icons-png.flaticon.com/512/2362/2362314.png" alt="">
+            </div>
+            <div class="text">
+                <div class="h2-cont">
+                    <h2 class="text-h2">SCM for </h2> 
+                    <h2 class="text-h2">Research</h2>
+                </div>
+                <p class="research">The Research team provides independent advice based on disciplined, tested research methods.</p>
+                <div class="link">
+  
+                  <div class="read-more">Learn more</div>
+                  <font-awesome-icon class="chevron" icon="chevron-right" />
+                </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="third-half">
+      <h2 class="section-h2">Hello, Want To Know More About What We Do?</h2> 
+      <p class="header-p">Familiarity is the very first step to every excellent relationship.</p>
       <div class="third-half-container">
         <div class="third-wrapper">
           <div class="about-us">
-            <h2 class="section-h2">About Us</h2>
+            <h2 >About Us</h2>
             <p class="about-p">The Company`s root as a premier investment bank in Nigeria date back over 50 years as NAL Merchant Bank Limited before it was packaged as a re-branding of the capital market competencies of the constituent banks that made up the Sterling Bank Group.</p>
             <div class="about-link link">
 
@@ -85,6 +101,7 @@
     <div class="forth-half">
       <div class="Heading">
         <h2 class="forth-h2 section-h2">Have You Seen Our Latest Blog Posts?</h2>
+        <p class="header-p">A range of published articles by our very own to get you up to speed on current happens.</p>
       </div>
       <div class=" forth-wrapper">
         <div class="cards">
@@ -242,9 +259,6 @@ export default {
   opacity: 1;
 }
 
-p{
-  line-height: 1.5;
-}
 .retreat{
   padding-bottom: 30px;
 }
@@ -258,9 +272,10 @@ p{
   padding-bottom: 30px;
 }
 .first-half{
+  background: #f7f8f8;
   padding-top: 68px;
   width: 100%;
-  height: 663px;
+  height: 600px;
   overflow-x: hidden;
 }
 .background-img{
@@ -277,7 +292,6 @@ p{
   height: 480px;
   transition: transform 0.5s;
   overflow: hidden;
-  
 }
 
 .button-container {
@@ -324,15 +338,25 @@ p{
   padding-top: 50px;
   padding-bottom: 170px
 }
+.second-half-card{
+  padding: 155px 0;
+  background: #f7f8f8;
+}
+
+.second-h2{
+
+  padding-bottom: 70px;
+  padding-left: 100px;
+}
 .card-wrapper{
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-  background: #f7f8f8;
-  padding: 155px 0;
+  margin: 0px 90px;
+  column-gap: 25px;
 }
 .card{
-  width: 400px;
+  width: 370px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   border-radius: 3px;
   transition: all 0.3s ease-in-out;
@@ -341,23 +365,25 @@ p{
   padding-bottom: 40px;
 }
 .text-h2{
-  text-align: center;
+  text-align: left;
 }
+
 .text{
   display: flex;
   flex-direction: column;
   row-gap: 15px;
-  padding: 25px 50px;
+  padding: 25px 30px;
+  text-align: center;
+
 }
 .card-img{
-  width: 100px;
-  margin-left: 140px;
-  margin-top: 25px;
+  width: 80px;
+  margin-left: 25px;
+  margin-top: 20px;
 }
 .link{
   display: flex;
   width: 100px;
-  margin-left: 100px;
   padding-top: 10px;
 }
 .forth-link{
@@ -419,6 +445,9 @@ p{
 }
 p{
   color: #011B33;
+  line-height: 1.5;
+  text-align: left;
+  text-align: justify;
 }
 .video{
   width: 500px;
@@ -437,9 +466,19 @@ p{
   width: 855px;
   font-weight: bolder;
 }
+.header-p{
+  padding-left: 100px;
+  padding-bottom: 70px;
+  font-size: 20px;
+}
 .section-h2{
+  padding-left: 100px;
+  padding-bottom: 10px;
+  width: 700px;
   font-size: 45px;
 }
+/* .section-h2{
+} */
 .forth-wrapper{
   gap: 50px;
 }
