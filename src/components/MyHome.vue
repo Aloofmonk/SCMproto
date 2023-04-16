@@ -106,7 +106,7 @@
       <div class=" forth-wrapper">
         <div class="cards">
           <div class="image">
-            <img class="forth-img" src="https://www.scmcapitalng.com/wp-content/uploads/2022/02/WhatsApp-Image-2022-02-12-at-2.42.06-PM.jpeg" alt="">
+            <img class="forth-img" src="https://static.vecteezy.com/system/resources/previews/003/857/439/original/happy-group-of-people-making-high-hands-business-team-concept-illustration-free-vector.jpg" alt="">
           </div>
           <div class="text text-one">
             <h2>SCM Retreat 2022</h2>
