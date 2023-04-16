@@ -20,7 +20,7 @@
 
       <div class="second-half-card">
         <h2 class="section-h2">Trusted by 200,000+ businesses</h2>
-        <p class="header-p">Thousands of organizations of all sizes trust SCM to grow their business.</p>
+        <p class="header-p">Thousands of organizations of all sizes trust SCM Capital to grow their business.</p>
 
         <div class="card-wrapper">
           <div class="card">
@@ -30,7 +30,7 @@
             <div class="text text-one">
               <div class="h2-cont">
 
-                <h2 class="text-h2">SCM for </h2> 
+                <h2 class="text-h2">SCM Capital for </h2> 
                 <h2 class="text-h2"> Investment Banking</h2>
               </div>
               <p class="invest">Our Investment Banking team handles business advisory and capital issues in the form of equity.</p>
@@ -48,7 +48,7 @@
             <div class="text">
                 <div class="h2-cont">
 
-                  <h2 class="text-h2">SCM for </h2> 
+                  <h2 class="text-h2">SCM Capital for </h2> 
                   <h2 class="text-h2">Asset Management</h2>
                 </div>
                 <p>SCM Capital Asset Management Limited is the Asset Management subsidiary of SCM Capital Limited.</p>
@@ -65,7 +65,7 @@
             </div>
             <div class="text">
                 <div class="h2-cont">
-                    <h2 class="text-h2">SCM for </h2> 
+                    <h2 class="text-h2">SCM Capital for </h2> 
                     <h2 class="text-h2">Research</h2>
                 </div>
                 <p class="research">The Research team provides independent advice based on disciplined, tested research methods.</p>
