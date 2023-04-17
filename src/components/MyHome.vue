@@ -19,8 +19,8 @@
     <div class="second-half">
 
       <div class="second-half-card">
-        <h2 class="section-h2">Trusted by 200,000+ businesses</h2>
-        <p class="header-p">Thousands of organizations of all sizes trust SCM Capital to grow their business.</p>
+        <h2 v-motion :initial="{opacity: 0,y: 50,}" :visibleOnce="{opacity: 1,y: 0,}" class="section-h2" :delay="200">Trusted by 200,000+ businesses</h2>
+        <p class="header-p" v-motion :initial="{ opacity: 0, y: 50, }" :visibleOnce="{ opacity: 1, y: 0, }" :delay="250">Thousands of organizations of all sizes trust SCM Capital to grow their business.</p>
 
         <div class="card-wrapper">
           <div class="card">
@@ -81,11 +81,11 @@
     </div>
 
     <div class="third-half">
-      <h2 class="section-h2">Hello, Want To Know More About What We Do?</h2> 
-      <p class="header-p">Familiarity is the very first step to every excellent relationship.</p>
+      <h2 class="section-h2" v-motion :initial="{ opacity: 0, y: 50, }" :visibleOnce="{ opacity: 1, y: 0, }" :delay="200">Hello, Want To Know More About What We Do?</h2> 
+      <p class="header-p" v-motion :initial="{ opacity: 0, y: 50, }" :visibleOnce="{ opacity: 1, y: 0, }" :delay="250">Familiarity is the very first step to every excellent relationship.</p>
       <div class="third-half-container">
-        <div class="third-wrapper">
-          <div class="about-us">
+        <div class="third-wrapper" v-motion :initial="{ opacity: 0, x: -50, }" :visibleOnce="{ opacity: 1, x: 0, }" :delay="400">
+          <div class="about-us" >
             <h2 >About Us</h2>
             <p class="about-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, repellendus possimus. Laboriosam eligendi assumenda recusandae velit cumque nisi aperiam tempora, at ut laborum nesciunt rerum odit, modi accusantium quod dignissimos voluptates a minima unde voluptatem, voluptas ab. Voluptatum eum iusto quaerat odio distinctio mollitia corrupti saepe eaque impedit! Maiores, dignissimos aperiam voluptates eligendi temporibus eius voluptate hic quas dolorem fugiat.</p>
             <div class="about-link link">
@@ -94,7 +94,7 @@
             </div>
           </div>
         </div>
-        <div class="video-wrapper"><video class="video" src="../images/welcome.mp4" controls>
+        <div class="video-wrapper" v-motion :initial="{ opacity: 0, x: 50, }" :visibleOnce="{ opacity: 1, x: 0, }" :delay="450"><video class="video" src="../images/welcome.mp4" controls>
           <source :src="videoSrc" type="video/mp4">
         </video></div>
       </div>
@@ -102,8 +102,8 @@
 
     <div class="forth-half">
       <div class="Heading">
-        <h2 class="forth-h2 section-h2">Have You Seen Our Latest Blog Posts?</h2>
-        <p class="header-p">A range of published articles by our very own to get you up to speed on current happens.</p>
+        <h2 class="forth-h2 section-h2" v-motion :initial="{ opacity: 0, y: 50, }" :visibleOnce="{ opacity: 1, y: 0, }" :delay="200">Have You Seen Our Latest Blog Posts?</h2>
+        <p class="header-p" v-motion :initial="{ opacity: 0, y: 50, }" :visibleOnce="{ opacity: 1, y: 0, }" :delay="250">A range of published articles by our very own to get you up to speed on current happens.</p>
       </div>
       <div class=" forth-wrapper">
         <div class="cards">
