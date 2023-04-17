@@ -367,6 +367,10 @@ export default {
   padding-top: 40px;
   padding-bottom: 40px;
 }
+.card:hover {
+  box-shadow: none;
+  transition: all 0.3s ease-in-out;
+}
 .text-h2{
   text-align: left;
 }
