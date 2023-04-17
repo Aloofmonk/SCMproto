@@ -308,7 +308,7 @@ export default {
   backdrop-filter: blur(50px);
   display: inline-block;
   border-radius: 5px;
-  z-index: 1000000;
+  /* z-index: 1000000; */
 }
 
 .button-container button {
