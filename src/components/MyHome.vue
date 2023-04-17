@@ -302,21 +302,20 @@ export default {
   left: 40%;
   bottom: 150px;
   display: flex;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.02);
   padding-bottom: 9px;
   margin-top: 10px;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(30px);
   display: inline-block;
   border-radius: 5px;
-  /* z-index: 1000000; */
 }
 
 .button-container button {
   margin: 0 5px;
   background-color: rgba(0, 0, 0, 0.37);
-  padding: 5px 7px;
+  padding: 3px 7px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 1px;
   outline: none;
   border: none;
   transition: all .2s ease-in-out;
