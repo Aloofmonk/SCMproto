@@ -87,14 +87,16 @@
         <div class="third-wrapper">
           <div class="about-us">
             <h2 >About Us</h2>
-            <p class="about-p">The Company`s root as a premier investment bank in Nigeria date back over 50 years as NAL Merchant Bank Limited before it was packaged as a re-branding of the capital market competencies of the constituent banks that made up the Sterling Bank Group.</p>
+            <p class="about-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, repellendus possimus. Laboriosam eligendi assumenda recusandae velit cumque nisi aperiam tempora, at ut laborum nesciunt rerum odit, modi accusantium quod dignissimos voluptates a minima unde voluptatem, voluptas ab. Voluptatum eum iusto quaerat odio distinctio mollitia corrupti saepe eaque impedit! Maiores, dignissimos aperiam voluptates eligendi temporibus eius voluptate hic quas dolorem fugiat.</p>
             <div class="about-link link">
 
               <div class="read-more">Learn more</div><div class="icon"><font-awesome-icon class="chevron" icon="chevron-right" /></div>
             </div>
           </div>
         </div>
-        <div class="video-wrapper"><img class="video" src="https://www.scmcapitalng.com/wp-content/uploads/2022/02/WhatsApp-Image-2022-02-12-at-2.42.06-PM.jpeg" alt=""></div>
+        <div class="video-wrapper"><video class="video" src="../images/welcome.mp4" controls>
+          <source :src="videoSrc" type="video/mp4">
+        </video></div>
       </div>
     </div>
 
@@ -188,7 +190,8 @@ export default {
         'https://www.scmcapitalng.com/wp-content/uploads/2020/12/Banner-6-min.jpg'
       ],
       timer: null,
-      currentIndex: 0
+      currentIndex: 0,
+      videoSrc: '../images/welcome.mp4',
     }
   },
   mounted() {
@@ -430,6 +433,7 @@ export default {
 .third-half-container{
   display: flex;
   justify-content: center;
+  padding-left: 155px;
 }
 .third-wrapper{
   padding: 30px;
@@ -450,11 +454,12 @@ p{
   text-align: justify;
 }
 .video{
-  width: 500px;
+  width: 600px;
 }
 .video-wrapper{
   position: relative;
-  left: -25px;
+  left: -300px;
+  top: 90px;
   margin-top: 140px;
 }
 .forth-half{
