@@ -454,6 +454,7 @@ p{
   text-align: justify;
 }
 .video{
+  box-shadow: 0 0 7px black;
   width: 600px;
 }
 .video-wrapper{
