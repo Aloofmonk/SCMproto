@@ -436,15 +436,16 @@ export default {
 .third-half-container{
   display: flex;
   justify-content: center;
-  padding-left: 155px;
+  column-gap: 15px;
+  /* padding-left: 155px; */
 }
 .third-wrapper{
   padding: 30px;
   width: 650px;
   line-height: 2;
-  background: #f7f8f8;
+  /* background: #f7f8f8; */
   height: 100%;
-  box-shadow: 0 0 5px rgb(207, 206, 206);
+  /* box-shadow: 0 0 5px rgb(207, 206, 206); */
 }
 .about-p{
   margin-bottom: 20px;
@@ -461,10 +462,10 @@ p{
   width: 600px;
 }
 .video-wrapper{
-  position: relative;
+  /* position: relative;
   left: -300px;
   top: 90px;
-  margin-top: 140px;
+  margin-top: 140px; */
 }
 .forth-half{
   padding: 155px 0;
