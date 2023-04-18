@@ -86,7 +86,7 @@
       <div class="third-half-container">
         <div class="third-wrapper" v-motion :initial="{ opacity: 0, x: -50, }" :visibleOnce="{ opacity: 1, x: 0, }" :delay="400">
           <div class="about-us" >
-            <h2 >About Us</h2>
+            <h2 class="about-h2" >About Us</h2>
             <p class="about-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi, repellendus possimus. Laboriosam eligendi assumenda recusandae velit cumque nisi aperiam tempora, at ut laborum nesciunt rerum odit, modi accusantium quod dignissimos voluptates a minima unde voluptatem, voluptas ab. Voluptatum eum iusto quaerat odio distinctio mollitia corrupti saepe eaque impedit! Maiores, dignissimos aperiam voluptates eligendi temporibus eius voluptate hic quas dolorem fugiat.</p>
             <div class="about-link link">
 
@@ -437,15 +437,15 @@ export default {
   display: flex;
   justify-content: center;
   column-gap: 15px;
-  /* padding-left: 155px; */
 }
 .third-wrapper{
-  padding: 30px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 0px;
   width: 650px;
   line-height: 2;
-  /* background: #f7f8f8; */
   height: 100%;
-  /* box-shadow: 0 0 5px rgb(207, 206, 206); */
 }
 .about-p{
   margin-bottom: 20px;
