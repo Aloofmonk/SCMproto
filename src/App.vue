@@ -119,6 +119,9 @@ export default {
 
 }
 
+.small{
+    visibility: hidden;
+  }
 
 @media screen and (max-width: 1300px){
   .container{
@@ -135,6 +138,7 @@ export default {
 
   .small{
     font-family: 'Roboto', sans-serif;
+    visibility: visible;
   }
 }
 
