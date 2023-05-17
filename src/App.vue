@@ -1,16 +1,20 @@
 <template>
-  <MyHeader :hideDiv="hideDiv" :showDiv1="showDiv1" @hide-div1="hideDiv1"
-  :showDiv2="showDiv2" @hide-div2="hideDiv2"
-  :showDiv3="showDiv3" @hide-div3="hideDiv3"
-  :showDiv4="showDiv4" @hide-div4="hideDiv4"
-  :showDiv5="showDiv5" @hide-div5="hideDiv5"
-  :hide1="hide1"
-  :hide2="hide2"
-  :hide3="hide3"
-  :hide4="hide4"
-  :hide5="hide5"
-  />
-  <MyHome :hideDiv="hideDiv"/>
+  <div class="container">
+
+    <MyHeader :hideDiv="hideDiv" :showDiv1="showDiv1" @hide-div1="hideDiv1"
+    :showDiv2="showDiv2" @hide-div2="hideDiv2"
+    :showDiv3="showDiv3" @hide-div3="hideDiv3"
+    :showDiv4="showDiv4" @hide-div4="hideDiv4"
+    :showDiv5="showDiv5" @hide-div5="hideDiv5"
+    :hide1="hide1"
+    :hide2="hide2"
+    :hide3="hide3"
+    :hide4="hide4"
+    :hide5="hide5"
+    />
+    <MyHome :hideDiv="hideDiv"/>
+  </div>
+  <p class="small">Oops! Your screen size is too small. Please make use of a PC for optimal experience</p>
 </template>
 
 <script>
@@ -102,6 +106,8 @@ export default {
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&family=Poppins&family=Roboto:wght@300&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -111,6 +117,25 @@ export default {
 #app{
   overflow: hidden;
 
+}
+
+
+@media screen and (max-width: 1300px){
+  .container{
+    display: none;
+
+  }
+
+  #app{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .small{
+    font-family: 'Roboto', sans-serif;
+  }
 }
 
 </style>
