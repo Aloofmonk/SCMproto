@@ -180,14 +180,15 @@ export default {
   data() {
     return {
       images: [
-        'https://assetmanagement.scmcapitalng.com/wp-content/uploads/2020/12/Banner-7-min.jpg',
-        'https://assetmanagement.scmcapitalng.com/wp-content/uploads/2020/12/Banner-8-min.jpg',
-        'https://www.scmcapitalng.com/wp-content/uploads/2020/12/Banner-4-min.jpg',
-        'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-5-2022.jpg',
-        'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-2-2022.jpg',
-        'https://www.scmcapitalng.com/wp-content/uploads/2021/06/Banner-5-Walk-you.jpg',
-        'https://www.scmcapitalng.com/wp-content/uploads/2022/01/Banner-3-2022.jpg',
-        'https://www.scmcapitalng.com/wp-content/uploads/2020/12/Banner-6-min.jpg'
+        'https://dg1xqmhtoint1.cloudfront.net/img/pgdm/blog/businessman-hand-holding-creative-light-bulb-with-marketing-network-icons-planning-strategy-pdgm.webp?mtime=20220506115838&focal=none',
+        'https://www.kingsleygate.com/wp-content/uploads/2015/08/Private-Equity-Firms.png',
+        'https://images.squarespace-cdn.com/content/v1/5b193431e749409db5a68068/1653479490434-SAM4V4FDXNSTNXBVZ3EQ/Copy+of+SquareSpace+Blog+Question+Image+%281%29.png?format=2500w',
+        'https://www.teahub.io/photos/full/27-274101_binary-background.jpg',
+        'https://lifeport.nl/wp-content/uploads/2021/12/Virtuele-banenbeurs-2022.png',
+        'https://media.licdn.com/dms/image/C5112AQF5NLyov4rAGA/article-cover_image-shrink_600_2000/0/1520106410916?e=2147483647&v=beta&t=dQgJRSRU_y4L1kso_aOuVyANS_CzCy8EfUHESfpKa2Y',
+        'https://i0.wp.com/musically.com/wp-content/uploads/2023/04/NFTs-1500x500-1.png?fit=1500%2C500&ssl=1',
+        'https://cdn1.media-and-learning.eu/files/2023/06/bigstock-Businessman-Showing-Virtual-Ic-471961281-1500x500.jpg',
+        'https://mediamergers.com/wp-content/uploads/2018/02/recent-newspaper-transactions.jpg'
       ],
       timer: null,
       currentIndex: 0,
